@@ -5,11 +5,14 @@ public class GameManager : MonoBehaviour
 
     public static GameManager GM;
 
-    public KeyCode Forward { get; set; }
-    public KeyCode Backward { get; set; }
-    public KeyCode Left { get; set; }
-    public KeyCode Right { get; set; }
-    public KeyCode Ability { get; set; }
+    public KeyCode PlayerOneForward { get; set; }
+    public KeyCode PlayerOneBackward { get; set; }
+    public KeyCode PlayerOneAbility { get; set; }
+
+    public KeyCode PlayerTwoForward { get; set; }
+    public KeyCode PlayerTwoBackward { get; set; }
+    public KeyCode PlayerTwoAbility { get; set; }
+    public KeyCode PlayerTwoInteract { get; set; }
 
     private void Awake()
     {
@@ -23,11 +26,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Forward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forward", "W"));
-        Backward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("backward", "S"));
-        Left = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("left", "A"));
-        Right = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("right", "D"));
-        Ability = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ability", "E"));
+        PlayerOneForward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerOneForward", "D"));
+        PlayerOneBackward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerOneBackward", "Q"));
+        PlayerOneAbility = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerOneAbility", "E"));
+
+        PlayerTwoForward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerTwoForward", "M"));
+        PlayerTwoBackward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerTwoBackward", "K"));
+        PlayerTwoAbility = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerTwoAbility", "P"));
+        PlayerTwoInteract = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerTwoInteract", "O"));
     }
 
 }
