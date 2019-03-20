@@ -65,11 +65,39 @@ public class ChangeKeyScript : MonoBehaviour
         }
     }
 
+    private bool CheckValidity()
+    {
+        bool check = true;
+
+        if (key == GameManager.GM.PlayerOneForward)
+            check = false;
+        else if (key == GameManager.GM.PlayerOneBackward)
+            check = false;
+        else if (key == GameManager.GM.PlayerOneAbility)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoForward)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoBackward)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoAbility)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoInteract)
+            check = false;
+        else if (key == GameManager.GM.ResetLevel)
+            check = false;
+        else if (key == GameManager.GM.ReturnMenu)
+            check = false;
+        return check;
+    }
+
     public IEnumerator AssignKey(string name)
     {
         waitingForKey = true;
 
         yield return WaitForKey();
+
+        if (!CheckValidity())
+            yield break;
 
         switch (name)
         {

@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public KeyCode PlayerTwoAbility { get; set; }
     public KeyCode PlayerTwoInteract { get; set; }
 
+    public KeyCode ResetLevel { get; set; }
+    public KeyCode ReturnMenu { get; set; }
+
     private void Awake()
     {
         if (GM == null)
@@ -34,6 +37,9 @@ public class GameManager : MonoBehaviour
         PlayerTwoBackward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerTwoBackward", "K"));
         PlayerTwoAbility = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerTwoAbility", "P"));
         PlayerTwoInteract = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerTwoInteract", "O"));
+
+        ResetLevel = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ResetLevel", "R"));
+        ReturnMenu = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ReturnMenu", "Escape"));
     }
 
 }
