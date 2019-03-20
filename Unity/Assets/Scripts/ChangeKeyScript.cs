@@ -1,19 +1,17 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections;
 using TMPro;
-using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeKeyScript : MonoBehaviour
 {
+    private Transform keyboardMenuPanel;
+    private Event keyEvent;
+    private TextMeshProUGUI buttonText;
+    private KeyCode key;
+    private bool waitingForKey;
 
-    Transform keyboardMenuPanel;
-    Event keyEvent;
-    TextMeshProUGUI buttonText;
-    KeyCode key;
-
-    bool waitingForKey;
-
-    void Start()
+    private void Start()
     {
         keyboardMenuPanel = transform.Find("KeyboardMenu");
         waitingForKey = false;
@@ -37,7 +35,7 @@ public class ChangeKeyScript : MonoBehaviour
         }
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         keyEvent = Event.current;
 
@@ -59,7 +57,7 @@ public class ChangeKeyScript : MonoBehaviour
         buttonText = text;
     }
 
-    IEnumerator WaitForKey()
+    private IEnumerator WaitForKey()
     {
         while (!keyEvent.isKey)
         {
@@ -73,7 +71,7 @@ public class ChangeKeyScript : MonoBehaviour
 
         yield return WaitForKey();
 
-        switch(name)
+        switch (name)
         {
             case "PlayerOneForward":
                 GameManager.GM.PlayerOneForward = key;
