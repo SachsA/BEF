@@ -20,16 +20,20 @@ public class ChangeKeyScript : MonoBehaviour
 
         for (int i = 0; i < keyboardMenuPanel.childCount; i++)
         {
-            if (keyboardMenuPanel.GetChild(i).name == "Forward")
-                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Forward.ToString();
-            else if (keyboardMenuPanel.GetChild(i).name == "Backward")
-                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Backward.ToString();
-            else if (keyboardMenuPanel.GetChild(i).name == "Left")
-                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Left.ToString();
-            else if (keyboardMenuPanel.GetChild(i).name == "Right")
-                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Right.ToString();
-            else if (keyboardMenuPanel.GetChild(i).name == "Ability")
-                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Ability.ToString();
+            if (keyboardMenuPanel.GetChild(i).name == "PlayerOneForward")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.PlayerOneForward.ToString();
+            else if (keyboardMenuPanel.GetChild(i).name == "PlayerOneBackward")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.PlayerOneBackward.ToString();
+            else if (keyboardMenuPanel.GetChild(i).name == "PlayerOneAbility")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.PlayerOneAbility.ToString();
+            else if (keyboardMenuPanel.GetChild(i).name == "PlayerTwoForward")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.PlayerTwoForward.ToString();
+            else if (keyboardMenuPanel.GetChild(i).name == "PlayerTwoBackward")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.PlayerTwoBackward.ToString();
+            else if (keyboardMenuPanel.GetChild(i).name == "PlayerTwoAbility")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.PlayerTwoAbility.ToString();
+            else if (keyboardMenuPanel.GetChild(i).name == "PlayerTwoInteract")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.PlayerTwoInteract.ToString();
         }
     }
 
@@ -71,30 +75,40 @@ public class ChangeKeyScript : MonoBehaviour
 
         switch(name)
         {
-            case "forward":
-                GameManager.GM.Forward = key;
-                buttonText.text = GameManager.GM.Forward.ToString();
-                PlayerPrefs.SetString("forward", GameManager.GM.Forward.ToString());
+            case "PlayerOneForward":
+                GameManager.GM.PlayerOneForward = key;
+                buttonText.text = GameManager.GM.PlayerOneForward.ToString();
+                PlayerPrefs.SetString("PlayerOneForward", GameManager.GM.PlayerOneForward.ToString());
                 break;
-            case "backward":
-                GameManager.GM.Backward = key;
-                buttonText.text = GameManager.GM.Backward.ToString();
-                PlayerPrefs.SetString("backward", GameManager.GM.Backward.ToString());
+            case "PlayerOneBackward":
+                GameManager.GM.PlayerOneBackward = key;
+                buttonText.text = GameManager.GM.PlayerOneBackward.ToString();
+                PlayerPrefs.SetString("PlayerOneBackward", GameManager.GM.PlayerOneBackward.ToString());
                 break;
-            case "left":
-                GameManager.GM.Left = key;
-                buttonText.text = GameManager.GM.Left.ToString();
-                PlayerPrefs.SetString("left", GameManager.GM.Left.ToString());
+            case "PlayerOneAbility":
+                GameManager.GM.PlayerOneAbility = key;
+                buttonText.text = GameManager.GM.PlayerOneAbility.ToString();
+                PlayerPrefs.SetString("PlayerOneAbility", GameManager.GM.PlayerOneAbility.ToString());
                 break;
-            case "right":
-                GameManager.GM.Right = key;
-                buttonText.text = GameManager.GM.Right.ToString();
-                PlayerPrefs.SetString("right", GameManager.GM.Right.ToString());
+            case "PlayerTwoForward":
+                GameManager.GM.PlayerTwoForward = key;
+                buttonText.text = GameManager.GM.PlayerTwoForward.ToString();
+                PlayerPrefs.SetString("PlayerTwoForward", GameManager.GM.PlayerTwoForward.ToString());
                 break;
-            case "ability":
-                GameManager.GM.Ability = key;
-                buttonText.text = GameManager.GM.Ability.ToString();
-                PlayerPrefs.SetString("ability", GameManager.GM.Ability.ToString());
+            case "PlayerTwoBackward":
+                GameManager.GM.PlayerTwoBackward = key;
+                buttonText.text = GameManager.GM.PlayerTwoBackward.ToString();
+                PlayerPrefs.SetString("PlayerTwoBackward", GameManager.GM.PlayerTwoBackward.ToString());
+                break;
+            case "PlayerTwoAbility":
+                GameManager.GM.PlayerTwoAbility = key;
+                buttonText.text = GameManager.GM.PlayerTwoAbility.ToString();
+                PlayerPrefs.SetString("PlayerTwoAbility", GameManager.GM.PlayerTwoAbility.ToString());
+                break;
+            case "PlayerTwoInteract":
+                GameManager.GM.PlayerTwoInteract = key;
+                buttonText.text = GameManager.GM.PlayerTwoInteract.ToString();
+                PlayerPrefs.SetString("PlayerTwoInteract", GameManager.GM.PlayerTwoInteract.ToString());
                 break;
         }
         yield return null;
