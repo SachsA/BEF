@@ -28,8 +28,8 @@ public class ChangeKeyScript : MonoBehaviour
                 keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Left.ToString();
             else if (keyboardMenuPanel.GetChild(i).name == "Right")
                 keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Right.ToString();
-            else if (keyboardMenuPanel.GetChild(i).name == "Interact")
-                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Interact.ToString();
+            else if (keyboardMenuPanel.GetChild(i).name == "Ability")
+                keyboardMenuPanel.GetChild(i).GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = GameManager.GM.Ability.ToString();
         }
     }
 
@@ -91,10 +91,10 @@ public class ChangeKeyScript : MonoBehaviour
                 buttonText.text = GameManager.GM.Right.ToString();
                 PlayerPrefs.SetString("right", GameManager.GM.Right.ToString());
                 break;
-            case "interact":
-                GameManager.GM.Interact = key;
-                buttonText.text = GameManager.GM.Interact.ToString();
-                PlayerPrefs.SetString("interact", GameManager.GM.Interact.ToString());
+            case "ability":
+                GameManager.GM.Ability = key;
+                buttonText.text = GameManager.GM.Ability.ToString();
+                PlayerPrefs.SetString("ability", GameManager.GM.Ability.ToString());
                 break;
         }
         yield return null;

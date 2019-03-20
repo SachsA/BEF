@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 2108210716, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: ApplyTextGradient
   m_EditorClassIdentifier: 
-  topLeft: {r: 0.14988557, g: 0.735849, b: 0, a: 1}
-  topRight: {r: 0.15294118, g: 0.7372549, b: 0, a: 1}
-  bottomLeft: {r: 0.119379774, g: 0.5754717, b: 0, a: 1}
-  bottomRight: {r: 0.12156863, g: 0.5764706, b: 0, a: 1}
+  topLeft: {r: 1, g: 0.84313726, b: 0, a: 1}
+  topRight: {r: 1, g: 0.84313726, b: 0, a: 1}
+  bottomLeft: {r: 1, g: 0.84313726, b: 0, a: 1}
+  bottomRight: {r: 1, g: 0.84313726, b: 0, a: 1}

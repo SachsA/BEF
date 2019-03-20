@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public KeyCode Backward { get; set; }
     public KeyCode Left { get; set; }
     public KeyCode Right { get; set; }
-    public KeyCode Interact { get; set; }
+    public KeyCode Ability { get; set; }
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         Backward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("backward", "S"));
         Left = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("left", "A"));
         Right = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("right", "D"));
-        Interact = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("interact", "E"));
+        Ability = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ability", "E"));
     }
 
 }
