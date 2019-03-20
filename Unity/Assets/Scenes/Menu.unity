@@ -1969,8 +1969,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -137, y: 0}
-  m_SizeDelta: {x: 150, y: 66}
+  m_AnchoredPosition: {x: -206, y: 0}
+  m_SizeDelta: {x: 288, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233251095
 MonoBehaviour:
@@ -2031,7 +2031,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: interact
+          m_StringArgument: PlayerTwoAbility
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -7710,8 +7710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: 0}
-  m_SizeDelta: {x: 150, y: 66}
+  m_AnchoredPosition: {x: 204.6, y: 0}
+  m_SizeDelta: {x: 288, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185018305
 MonoBehaviour:
@@ -7772,7 +7772,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: forward
+          m_StringArgument: PlayerOneForward
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -8768,8 +8768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: 0}
-  m_SizeDelta: {x: 150, y: 66}
+  m_AnchoredPosition: {x: 201.1, y: 0}
+  m_SizeDelta: {x: 288, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374143011
 MonoBehaviour:
@@ -8830,7 +8830,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: interact
+          m_StringArgument: PlayerOneAbility
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -10388,8 +10388,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -137, y: 0}
-  m_SizeDelta: {x: 150, y: 66}
+  m_AnchoredPosition: {x: -206, y: 0}
+  m_SizeDelta: {x: 288, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620659072
 MonoBehaviour:
@@ -10450,7 +10450,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: forward
+          m_StringArgument: PlayerTwoForward
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -11885,8 +11885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -137, y: 0}
-  m_SizeDelta: {x: 150, y: 66}
+  m_AnchoredPosition: {x: -206, y: 0}
+  m_SizeDelta: {x: 288, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821556982
 MonoBehaviour:
@@ -11947,7 +11947,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: backward
+          m_StringArgument: PlayerTwoBackward
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -12534,8 +12534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: 0}
-  m_SizeDelta: {x: 150, y: 66}
+  m_AnchoredPosition: {x: 207.3, y: 0}
+  m_SizeDelta: {x: 288, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000008954
 MonoBehaviour:
@@ -12596,7 +12596,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: backward
+          m_StringArgument: PlayerOneBackward
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -13065,8 +13065,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -137, y: 0}
-  m_SizeDelta: {x: 150, y: 66}
+  m_AnchoredPosition: {x: -206, y: 0}
+  m_SizeDelta: {x: 288, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108264411
 MonoBehaviour:
@@ -13127,7 +13127,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: interact
+          m_StringArgument: PlayerTwoInteract
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
