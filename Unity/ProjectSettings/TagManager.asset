@@ -14,12 +14,12 @@ TagManager:
   - 
   - 
   - Plateform
-  - Players
+  - LightPlayer
   - Background
   - Foreground
   - Environnement
-  - 
-  - 
+  - Lever
+  - HeavyPlayer
   - 
   - 
   - 
@@ -38,11 +38,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 835724195
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 835724195
+  - name: Lever
+    uniqueID: 4262273113
+    locked: 0
+  - name: HeavyPLayer
+    uniqueID: 4064107627
+    locked: 0
+  - name: LightPlayer
+    uniqueID: 458810529
     locked: 0
   - name: Plateform
     uniqueID: 2556563271
@@ -52,7 +61,4 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3796744641
-    locked: 0
-  - name: Player
-    uniqueID: 458810529
     locked: 0
