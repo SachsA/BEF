@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4406635475432955629}
   - component: {fileID: 7262267171114722615}
   - component: {fileID: 3808320913014814323}
+  - component: {fileID: 375284149401855460}
   m_Layer: 13
   m_Name: lever
-  m_TagString: Untagged
+  m_TagString: Lever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +115,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7262267171114722615}
   linkedObject: {fileID: 0}
+--- !u!61 &375284149401855460
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5702420266670819152}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4713906}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.7, y: 1.3}
+    newSize: {x: 1.7, y: 1.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 0.36207747}
+  m_EdgeRadius: 0

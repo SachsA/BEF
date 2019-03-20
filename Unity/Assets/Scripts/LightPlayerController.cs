@@ -22,6 +22,8 @@ public class LightPlayerController : MonoBehaviour
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;  // How much to smooth out the movement
     public float moveSpeed;
 
+    public bool activate = false;
+    private bool wasActivate = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +56,26 @@ public class LightPlayerController : MonoBehaviour
 
         }
 
+        if (activate && wasActivate)
+        {
+            activate = false;
+        }
+
+        if (Input.GetKeyDown(GameManager.GM.PlayerTwoInteract) && !wasActivate)
+        {
+            activate = true;
+            wasActivate = true;
+
+        }
+        else if (Input.GetKeyUp(GameManager.GM.PlayerTwoInteract))
+        {
+            wasActivate = false;
+            activate = false;
+        }
+
     }
+
+    
 
     void FixedUpdate()
     {
@@ -116,5 +137,15 @@ public class LightPlayerController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (activate && collision.collider.tag == "Lever")
+        {
+            collision.collider.GetComponent<Lever_Activation>().ActivateLever();
+            
+        }
+    }
+
 
 }

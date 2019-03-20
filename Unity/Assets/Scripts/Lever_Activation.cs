@@ -8,12 +8,11 @@ public class Lever_Activation : MonoBehaviour
     public GameObject linkedObject;
 
 
-    private int leverPosition;
+    public int leverPosition;
     
     // Start is called before the first frame update
     void Start()
     {
-        leverPosition = -1;
         animator.SetInteger("Position", leverPosition);
     }
 
@@ -37,8 +36,4 @@ public class Lever_Activation : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        
-    }
 }
