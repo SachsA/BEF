@@ -4,6 +4,8 @@ using UnityEngine;
 public class LightPlayerController : MonoBehaviour
 {
 
+    public Animator animator;
+
     [SerializeField] private LayerMask whatIsGround;  // A mask determining what is ground to the character
     const float groundedRadius = 0.2f;                // Radius of the overlap circle to determine if grounded
     private bool grounded;                            // Whether or not the player is grounded.
@@ -43,9 +45,13 @@ public class LightPlayerController : MonoBehaviour
             horizontalMove -= moveSpeed;
         }
 
+        animator.SetFloat("moveSpeed", Mathf.Abs(horizontalMove));
+
         if (Input.GetKeyDown(GameManager.GM.PlayerTwoAbility))
         {
             jump = true;
+            animator.SetBool("isJumping", true);
+
         }
 
     }
@@ -63,6 +69,8 @@ public class LightPlayerController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 grounded = true;
+                animator.SetBool("isJumping", false);
+
             }
         }
         Move(horizontalMove * Time.fixedDeltaTime, jump);

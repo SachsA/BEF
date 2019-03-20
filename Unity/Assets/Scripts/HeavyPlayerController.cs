@@ -5,6 +5,8 @@ using UnityEngine;
 public class HeavyPlayerController : MonoBehaviour
 {
 
+    public Animator animator;
+
     float horizontalMove = 0f;
     private Rigidbody2D rigidbody2D;
     private Vector3 m_Velocity = Vector3.zero;
@@ -20,6 +22,7 @@ public class HeavyPlayerController : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.velocity = new Vector2(0, 0);
+
 
     }
 
@@ -37,6 +40,7 @@ public class HeavyPlayerController : MonoBehaviour
             horizontalMove -= moveSpeed;
         }
 
+        animator.SetFloat("moveSpeed", Mathf.Abs(horizontalMove));
     }
 
     void FixedUpdate()
@@ -63,6 +67,7 @@ public class HeavyPlayerController : MonoBehaviour
             // ... flip the player.
             Flip();
         }
+
     }
 
     private void Flip()
