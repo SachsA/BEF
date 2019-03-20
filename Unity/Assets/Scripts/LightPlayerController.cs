@@ -5,7 +5,7 @@ public class LightPlayerController : MonoBehaviour
 {
 
     [SerializeField] private LayerMask whatIsGround;  // A mask determining what is ground to the character
-    const float groundedRadius = 0.5f;                // Radius of the overlap circle to determine if grounded
+    const float groundedRadius = 0.2f;                // Radius of the overlap circle to determine if grounded
     private bool grounded;                            // Whether or not the player is grounded.
     private bool jump;
 
@@ -45,7 +45,6 @@ public class LightPlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(GameManager.GM.PlayerTwoAbility))
         {
-            Debug.Log("SAUT");
             jump = true;
         }
 
