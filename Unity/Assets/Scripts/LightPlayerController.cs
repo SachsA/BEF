@@ -7,7 +7,7 @@ public class LightPlayerController : MonoBehaviour
     public Animator animator;
 
     [SerializeField] private LayerMask whatIsGround;  // A mask determining what is ground to the character
-    const float groundedRadius = 0.2f;                // Radius of the overlap circle to determine if grounded
+    private const float groundedRadius = 0.2f;                // Radius of the overlap circle to determine if grounded
     private bool grounded;                            // Whether or not the player is grounded.
     private bool jump;
 
@@ -15,7 +15,7 @@ public class LightPlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 400f;    // Amount of force added when the player jumps.
     [SerializeField] private Transform groundCheck;     // A position marking where to check if the player is grounded.
 
-    float horizontalMove = 0f;
+    private float horizontalMove = 0f;
     private Rigidbody2D rigidbody2D;
     private Vector3 velocity = Vector3.zero;
     private bool facingRight = true;             // For determining which way the player is currently facing.
@@ -26,7 +26,7 @@ public class LightPlayerController : MonoBehaviour
     private bool wasActivate = false;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.velocity = new Vector2(0, 0);
@@ -34,7 +34,7 @@ public class LightPlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         horizontalMove = 0.0f;
         if (Input.GetKey(GameManager.GM.PlayerTwoForward))
@@ -65,17 +65,11 @@ public class LightPlayerController : MonoBehaviour
         else if (Input.GetKeyUp(GameManager.GM.PlayerTwoInteract))
         {
             wasActivate = false;
-         //   activate = false;
+            //   activate = false;
         }
-        
-        if (activate)
-           Debug.Log(activate + " " + wasActivate);
-
     }
 
-    
-
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         bool wasGrounded = grounded;
         grounded = false;
@@ -87,7 +81,6 @@ public class LightPlayerController : MonoBehaviour
         {
             if (activate && LeverColliders[i].tag == "Lever")
             {
-                Debug.Log("ACTIVATE ! ");
                 LeverColliders[i].GetComponent<Lever_Activation>().ActivateLever();
                 activate = false;
             }

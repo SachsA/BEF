@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,6 +41,14 @@ public class GameManager : MonoBehaviour
 
         ResetLevel = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ResetLevel", "R"));
         ReturnMenu = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ReturnMenu", "Escape"));
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(GM.ReturnMenu))
+            SceneManager.LoadScene("Menu");
+        if (Input.GetKey(GM.ResetLevel) && SceneManager.GetActiveScene().buildIndex != 3)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HeavyPlayerController : MonoBehaviour
 {
 
     public Animator animator;
-
-    float horizontalMove = 0f;
+    private float horizontalMove = 0f;
     private Rigidbody2D rigidbody2D;
     private Vector3 m_Velocity = Vector3.zero;
     private bool facingRight = true;  // For determining which way the player is currently facing.
@@ -18,7 +15,7 @@ public class HeavyPlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.velocity = new Vector2(0, 0);
@@ -27,7 +24,7 @@ public class HeavyPlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         horizontalMove = 0.0f;
         if (Input.GetKey(GameManager.GM.PlayerOneForward))
@@ -43,7 +40,7 @@ public class HeavyPlayerController : MonoBehaviour
         animator.SetFloat("moveSpeed", Mathf.Abs(horizontalMove));
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Move(horizontalMove * Time.fixedDeltaTime);
     }
