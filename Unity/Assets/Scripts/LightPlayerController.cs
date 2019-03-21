@@ -56,11 +56,6 @@ public class LightPlayerController : MonoBehaviour
 
         }
 
-        if (activate && wasActivate)
-        {
-            activate = false;
-        }
-
         if (Input.GetKeyDown(GameManager.GM.PlayerTwoInteract) && !wasActivate)
         {
             activate = true;
@@ -70,8 +65,11 @@ public class LightPlayerController : MonoBehaviour
         else if (Input.GetKeyUp(GameManager.GM.PlayerTwoInteract))
         {
             wasActivate = false;
-            activate = false;
+         //   activate = false;
         }
+        
+        if (activate)
+           Debug.Log(activate + " " + wasActivate);
 
     }
 
@@ -84,10 +82,28 @@ public class LightPlayerController : MonoBehaviour
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
-        for (int i = 0; i < colliders.Length; i++)
+        Collider2D[] LeverColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, LayerMask.GetMask("Lever"));
+        for (int i = 0; i < LeverColliders.Length; i++)
         {
-            if (colliders[i].gameObject != gameObject)
+            if (activate && LeverColliders[i].tag == "Lever")
+            {
+                Debug.Log("ACTIVATE ! ");
+                LeverColliders[i].GetComponent<Lever_Activation>().ActivateLever();
+                activate = false;
+            }
+
+            if (LeverColliders[i].gameObject != gameObject)
+            {
+                grounded = true;
+                animator.SetBool("isJumping", false);
+
+            }
+        }
+
+        Collider2D[] groundColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
+        for (int i = 0; i < groundColliders.Length; i++)
+        {
+            if (groundColliders[i].gameObject != gameObject)
             {
                 grounded = true;
                 animator.SetBool("isJumping", false);
@@ -137,15 +153,5 @@ public class LightPlayerController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (activate && collision.collider.tag == "Lever")
-        {
-            collision.collider.GetComponent<Lever_Activation>().ActivateLever();
-            
-        }
-    }
-
 
 }
