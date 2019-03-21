@@ -1,19 +1,17 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections;
 using TMPro;
-using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeKeyScript : MonoBehaviour
 {
+    private Transform keyboardMenuPanel;
+    private Event keyEvent;
+    private TextMeshProUGUI buttonText;
+    private KeyCode key;
+    private bool waitingForKey;
 
-    Transform keyboardMenuPanel;
-    Event keyEvent;
-    TextMeshProUGUI buttonText;
-    KeyCode key;
-
-    bool waitingForKey;
-
-    void Start()
+    private void Start()
     {
         keyboardMenuPanel = transform.Find("KeyboardMenu");
         waitingForKey = false;
@@ -37,7 +35,7 @@ public class ChangeKeyScript : MonoBehaviour
         }
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         keyEvent = Event.current;
 
@@ -59,12 +57,37 @@ public class ChangeKeyScript : MonoBehaviour
         buttonText = text;
     }
 
-    IEnumerator WaitForKey()
+    private IEnumerator WaitForKey()
     {
         while (!keyEvent.isKey)
         {
             yield return null;
         }
+    }
+
+    private bool CheckValidity()
+    {
+        bool check = true;
+
+        if (key == GameManager.GM.PlayerOneForward)
+            check = false;
+        else if (key == GameManager.GM.PlayerOneBackward)
+            check = false;
+        else if (key == GameManager.GM.PlayerOneAbility)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoForward)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoBackward)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoAbility)
+            check = false;
+        else if (key == GameManager.GM.PlayerTwoInteract)
+            check = false;
+        else if (key == GameManager.GM.ResetLevel)
+            check = false;
+        else if (key == GameManager.GM.ReturnMenu)
+            check = false;
+        return check;
     }
 
     public IEnumerator AssignKey(string name)
@@ -73,7 +96,10 @@ public class ChangeKeyScript : MonoBehaviour
 
         yield return WaitForKey();
 
-        switch(name)
+        if (!CheckValidity())
+            yield break;
+
+        switch (name)
         {
             case "PlayerOneForward":
                 GameManager.GM.PlayerOneForward = key;
