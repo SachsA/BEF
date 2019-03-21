@@ -4,41 +4,70 @@ using UnityEngine.SceneManagement;
 
 public class LaunchMenuSceneOnClick : MonoBehaviour
 {
-    public GameObject Moving;
+    public GameObject FirstObj;
+    public GameObject SecondObj;
 
-    public Transform pos;
-    public Transform destination;
+    public Transform FirstObjPos;
+    public Transform SecondObjPos;
 
-    private float moveSpeed;
-    private Animator Anim;
-    private bool isClicked = false;
+    public Transform Destination;
+
+    public string SceneName;
+    public float WaitBeforeLaunchScene;
+
+    public bool IsClicked = false;
+
+    private float firstMoveSpeed;
+    private float secondMoveSpeed;
+
+    private Animator firstAnim;
+    private Animator secondAnim;
+
+    private bool firstArrived = false;
+    private bool secondArrived = false;
 
     private void Start()
     {
-        if (pos.position.x < 0)
-            moveSpeed = 2.0f;
+        if (FirstObjPos.position.x < 0)
+            firstMoveSpeed = 2.0f;
         else
-            moveSpeed = -2.0f;
-        Anim = Moving.GetComponent<Animator>();
+            firstMoveSpeed = -2.0f;
+
+        if (SecondObjPos.position.x < 0)
+            secondMoveSpeed = 2.0f;
+        else
+            secondMoveSpeed = -2.0f;
+
+        firstAnim = FirstObj.GetComponent<Animator>();
+        secondAnim = SecondObj.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            Anim.runtimeAnimatorController = Resources.Load("Animator" + Moving.name.ToString() + "Run") as RuntimeAnimatorController;
-            isClicked = true;
-        }
+            IsClicked = true;
 
-        if (isClicked)
+        if (IsClicked)
         {
-            if (Mathf.Abs(pos.position.x - destination.position.x) > 0.1)
-                GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
+            firstAnim.runtimeAnimatorController = Resources.Load("Animator" + FirstObj.name.ToString() + "Run") as RuntimeAnimatorController;
+            secondAnim.runtimeAnimatorController = Resources.Load("Animator" + SecondObj.name.ToString() + "Run") as RuntimeAnimatorController;
+
+            if (Mathf.Abs(FirstObjPos.position.x - Destination.position.x) > 0.1)
+                FirstObj.GetComponent<Rigidbody2D>().velocity = new Vector2(firstMoveSpeed, 0);
             else
+                firstArrived = true;
+            if (Mathf.Abs(SecondObjPos.position.x - Destination.position.x) > 0.1)
+                SecondObj.GetComponent<Rigidbody2D>().velocity = new Vector2(secondMoveSpeed, 0);
+            else
+                secondArrived = true;
+
+            if (firstArrived && secondArrived)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                Anim.runtimeAnimatorController = Resources.Load("Animator" + Moving.name.ToString() + "Idle") as RuntimeAnimatorController;
+                FirstObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                SecondObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                firstAnim.runtimeAnimatorController = Resources.Load("Animator" + FirstObj.name.ToString() + "Idle") as RuntimeAnimatorController;
+                secondAnim.runtimeAnimatorController = Resources.Load("Animator" + SecondObj.name.ToString() + "Idle") as RuntimeAnimatorController;
                 StartCoroutine(LaunchNextSceneAfterPause());
             }
         }
@@ -47,7 +76,7 @@ public class LaunchMenuSceneOnClick : MonoBehaviour
 
     private IEnumerator LaunchNextSceneAfterPause()
     {
-        yield return new WaitForSeconds(0.6f);
-        SceneManager.LoadScene("Menu");
+        yield return new WaitForSeconds(WaitBeforeLaunchScene);
+        SceneManager.LoadScene(SceneName);
     }
 }

@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 274969185}
   - component: {fileID: 274969184}
   - component: {fileID: 274969188}
-  - component: {fileID: 274969187}
   m_Layer: 0
   m_Name: HeavyPlayer
   m_TagString: Untagged
@@ -244,21 +243,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &274969187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274969183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d10d565b105ce144bc801907aac887c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Moving: {fileID: 274969183}
-  pos: {fileID: 1953175403}
-  destination: {fileID: 1985407340}
 --- !u!50 &274969188
 Rigidbody2D:
   serializedVersion: 4
@@ -451,6 +435,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &546729149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546729151}
+  - component: {fileID: 546729150}
+  m_Layer: 0
+  m_Name: HandleMenuScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546729150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546729149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d10d565b105ce144bc801907aac887c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstObj: {fileID: 1123675012}
+  SecondObj: {fileID: 274969183}
+  FirstObjPos: {fileID: 23621501}
+  SecondObjPos: {fileID: 1953175403}
+  Destination: {fileID: 1985407340}
+  SceneName: Menu
+  WaitBeforeLaunchScene: 0.6
+--- !u!4 &546729151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546729149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7986772, y: -0.17470215, z: 0.0078125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123675012
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +497,6 @@ GameObject:
   - component: {fileID: 1123675014}
   - component: {fileID: 1123675013}
   - component: {fileID: 1123675017}
-  - component: {fileID: 1123675016}
   m_Layer: 0
   m_Name: LightPlayer
   m_TagString: Untagged
@@ -553,21 +586,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1123675016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123675012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d10d565b105ce144bc801907aac887c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Moving: {fileID: 1123675012}
-  pos: {fileID: 23621501}
-  destination: {fileID: 1985407340}
 --- !u!50 &1123675017
 Rigidbody2D:
   serializedVersion: 4
