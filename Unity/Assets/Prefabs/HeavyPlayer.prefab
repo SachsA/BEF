@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6229568080934949130}
   m_Layer: 14
   m_Name: HeavyPlayer
-  m_TagString: Untagged
+  m_TagString: Players
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,8 +206,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000040250677, y: -3.1114843}
-  m_Size: {x: 12.47, y: 5.277087}
+  m_Offset: {x: -0.00000033101983, y: -2.5588715}
+  m_Size: {x: 12.470004, y: 5.645499}
   m_Direction: 1
 --- !u!1 &7738202591789343472
 GameObject:

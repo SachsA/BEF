@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8463696175552777010}
   m_Layer: 9
   m_Name: LightPlayer
-  m_TagString: Untagged
+  m_TagString: Players
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   groundCheck: {fileID: 2029776245}
   movementSmoothing: 0.05
   moveSpeed: 30
+  activate: 0
 --- !u!70 &8463696175552777010
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
