@@ -44,6 +44,11 @@ public class SettingsManager : MonoBehaviour
         LoadSettings();
     }
 
+    private void Start()
+    {
+        audioMixer.SetFloat("masterVolume", gameSettings.volume);
+    }
+
     public void OnFullscreenToggle()
     {
         gameSettings.fullScreen = fullscreenToggle.isOn;
@@ -108,6 +113,7 @@ public class SettingsManager : MonoBehaviour
             gameSettings = JsonUtility.FromJson<GameSettings>(jsonData);
 
             volumeSlider.value = gameSettings.volume;
+            audioMixer.SetFloat("masterVolume", gameSettings.volume);
             antialiasingDropdown.value = gameSettings.antialiasing;
             fullscreenToggle.isOn = gameSettings.fullScreen;
             textureDropdown.value = gameSettings.texture;

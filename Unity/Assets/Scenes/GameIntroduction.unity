@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5353723094044170064, guid: bad72d8443193dc47b058014cca83746,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bad72d8443193dc47b058014cca83746, type: 3}
 --- !u!1 &887206468
@@ -261,7 +266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName:
     m_Handle: 2
-  FadeScene: {fileID: 0}
 --- !u!1 &1959382967
 GameObject:
   m_ObjectHideFlags: 0
