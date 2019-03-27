@@ -15,6 +15,7 @@ Then, launch the game, watch the introduction and... Enjoy !
 &nbsp;
 ### Download and support the game  
 Go on the  **[Itch.io](https://k-6pir.itch.io/best-enemy-forever)** page, and download it !
+
 You can even vote for us there : ***https://itch.io/jam/impact-jam-epitech-2019/rate/394448***
 &nbsp;
 #### Project realised by:
