@@ -23,6 +23,6 @@ You can even vote for us there : ***https://itch.io/jam/impact-jam-epitech-2019/
 Go in the **"presentation"** folder to see our pitch *AND* the introduction video in mp4 format.
 
 #### Project realised by:
-- **Alexandre Sachs : [alexandre.sachs@epitech.eu](https://github.com/SachsA)**
+- **Alexandre Sachs : [alexandre.sachs@outlook.fr](https://github.com/SachsA)**
 - **Kellian Cipierre : [kellian.cipierre@epitech.eu](https://github.com/K6PIR)**
 - **Thomas Bleneau : [thomas.bleneau@epitech.eu](https://github.com/TBlenoX)**
